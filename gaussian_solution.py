@@ -178,7 +178,19 @@ class Gaussian():
 
             return result
 
-        def 
+        def __repr__(self):
+            """Function to output the characteristic of the Gaussian instance
+
+            Args: 
+                None
+
+            Returns: 
+                string: characteristics of the Gaussian
+            """
+
+            return "mean {}, standard deviation {}".format(self.mean, self.stdev)
+
+            
 
 
 
