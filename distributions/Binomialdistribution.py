@@ -53,6 +53,23 @@ class Binomial(Distribution):
         return self.stdev
 
     def replace_stats_with_data(self):
-        """
+        """Function to calculate the p and n from the data set
+
+        Args: 
+            None
+
+        Returns: 
+            float: the p value 
+            float: the n value
         
         """
+
+        self.n = len(self.data)
+        self.p = 1.0 * sum(self.data) / len(self.data)
+        self.mean = self.calculate_mean()
+        self.stdev = self.calculate_stdev()
+
+        return self.p, self.n
+
+
+    
