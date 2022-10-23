@@ -1,0 +1,10 @@
+setup.py
+didactic_distributions/Binomialdistribution.py
+didactic_distributions/Gaussiandistribution.py
+didactic_distributions/Generaldistribution.py
+didactic_distributions/__init__.py
+didactic_distributions.egg-info/PKG-INFO
+didactic_distributions.egg-info/SOURCES.txt
+didactic_distributions.egg-info/dependency_links.txt
+didactic_distributions.egg-info/not-zip-safe
+didactic_distributions.egg-info/top_level.txt
