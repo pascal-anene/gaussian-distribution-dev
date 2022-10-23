@@ -88,3 +88,52 @@ class Binomial(Distribution):
         plt.title('Bar Chart of Data')
         plt.xlabel('outcome')
         plt.ylabel('count')
+
+
+    def pdf(self, k):
+        """Probability density function calculator for the binomial distribution. 
+
+        Args:
+            x (float): point for calculating the probability density function 
+
+        Returns: 
+            float: probability density function output
+        
+        """
+
+        a = math.factorial(self.n) / (math.factorial(k) * (math.factorial(self.n - k)))
+        b = (self.p ** k) * (1 - self.p) ** (self.n - k)
+
+        return a * b
+
+    def plot_bar_pdf(self):
+        """Function to plot the pdf of the binomial distribution
+
+        Args: 
+            None
+
+        Returns: 
+            list: x values for the pdf plot
+            list: y values for the pdf plot
+        
+        """
+
+        x = []
+        y = []
+
+        # calculate the x values to visualize 
+        for i in range(self.n + 1):
+            x.append(i)
+            y.append(self.pdf(i))
+
+        # make the plots
+        plt.bar(x, y)
+        plt.title('Distribution of Outcomes')
+        plt.ylabel('Probability')
+        plt.xlabel('Outcome')
+
+        plt.show()
+
+        return x, y
+
+    
