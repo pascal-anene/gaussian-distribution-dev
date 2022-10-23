@@ -1,4 +1,5 @@
 import math
+from unittest import result
 import matplotlib.pyplot as plt
 
 from .Generaldistribution import Distribution
@@ -136,4 +137,42 @@ class Binomial(Distribution):
 
         return x, y
 
-    
+    def __add__(self, other):
+        """Function to add together two Binomial distribution with equal p
+
+        Args:
+            other (Binomial): Binomial instance
+
+        Returns: 
+            Binomial: Binomial distribution 
+        
+        """
+
+        try:
+            assert self.p == other.p, 'p values are not equal'
+        except AssertionError as error: 
+            raise
+
+        result = Binomial()
+        result.n = self.n + other.n
+        result.p = self.p
+        result.calculate_mean()
+        result.calculate_stdev()
+
+        return result
+
+    def __repr__(self):
+        """Function to output the characteristics of the Binomial Instance
+
+        Args: 
+            None
+
+        Returns: 
+            string: characteristics of the Gaussian
+        
+        """
+
+        return "mean {}, standard deviation {}, p {}, n {}".\
+        format(self.mean, self.stdev, self.p, self.n)
+
+        
